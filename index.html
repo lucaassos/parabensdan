@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Parabéns, Campeão!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #6dd5ed, #2193b0);
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+      animation: fadeIn 2s ease;
+      margin-top:50px;
+    }
+
+    h1 {
+      font-size: 3em;
+      animation: bounce 2s infinite;
+      margin-bottom: 10px;
+    }
+
+    .emoji {
+      font-size: 4em;
+      display: inline-block;
+      animation: spin 4s linear infinite;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin-top: 20px;
+      animation: fadeIn 3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Confetti style */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      opacity: 0.7;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="emoji">✏️➡️🖊️🎉</div>
+    <h1>Parabéns, Daniel Lucca!!</h1>
+    <p>Você trocou o lápis pela caneta!<br>  
+    Abre a sopinha AN AN AN AN<br>
+    Estamos super orgulhosos de você! ⭐👏</p>
+  </div>
+
+  <button onclick="window.open('https://www.youtube.com/watch?v=hsAU8467rgY', '_blank')"
+          style="position: fixed; top: 20px; right: 20px; padding: 10px; font-size: 16px;">
+    ▶️ Tocar Música
+  </button>
+
+  <script>
+    // Gera confetes aleatórios na tela
+    const colors = ['#ffffff', '#ffcc00', '#ff6699', '#66ff66', '#66ccff', '#ff6666'];
+    for (let i = 0; i < 100; i++) {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.width = confetti.style.height = Math.random() * 8 + 4 + 'px';
+      document.body.appendChild(confetti);
+    }
+  </script>
+
+</body>
+</html>
